@@ -1,12 +1,11 @@
 #include "_printf.h"
 #include <stdarg.h>
-/**
- * print_char - Imprime un caractere
- * @args: les arguments.
 
+/**
+ * print_char - Imprime un caractère
+ * @args: les arguments.
  * Return: Le caractère imprimé
  */
-
 
  int print_char(va_list args)
 {
@@ -23,7 +22,6 @@
 
 int print_str(va_list args)
 {
-
 	int j;
 	char *str = va_arg(args, char *);
 
