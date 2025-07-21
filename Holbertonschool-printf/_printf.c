@@ -1,6 +1,5 @@
 #include <stdarg.h>
-#include "holberton.h"
-#include "main.h"
+#include "_printf.h"
 
 /**
  * _printf - Custom printf function
@@ -9,4 +8,18 @@
  *
  * Return: The number of characters printed
  */
- 
+
+int _printf(const char *format, ...);
+{
+	va_list args;
+	int i = 0;
+
+	va_start(args, format);
+
+	if (format == NULL || !format[i + 1])
+		return (-1);
+
+
+	while (format[i])
+	{
+
