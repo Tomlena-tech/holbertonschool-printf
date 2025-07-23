@@ -10,11 +10,12 @@
  * Return: The number of characters printed
  */
 
-int _printf(const char *format, ...);
+int _printf(const char *format, ...)
 {
 	va_list args;
 	int i = 0;
 	int char_count = 0;
+	int (*f)(va_list);
 
 	va_start(args, format);
 
@@ -35,12 +36,13 @@ int _printf(const char *format, ...);
 			else
 				{
 					f = get_func(&format[i + 1]);
-					j += f(args);
+					char_count += f(args);
 					i++;
 				}
-			}
+			
 		}
-}
+
+	}
 	va_end(args);
-	return (j);
+	return (char_count);
 }
