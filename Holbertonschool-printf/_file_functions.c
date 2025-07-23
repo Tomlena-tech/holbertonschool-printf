@@ -22,16 +22,16 @@
 
 int print_str(va_list args)
 {
-	int j;
+	int char_count;
 	char *str = va_arg(args, char *);
 
 	if (str == NULL)
 		str = "(null)";
-	for (j = 0; str[j]; j++)
+	for (char_count = 0; str[char_count]; j++)
 	{
-		_putchar(str[j]);
+		_putchar(str[char_count]);
 	}
-	return (j);
+	return (char_count);
 }
 int print_percent(va_list args)
 {

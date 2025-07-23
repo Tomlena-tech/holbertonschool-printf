@@ -7,8 +7,6 @@
 #include <unistd.h>
 
 int _printf(const char *format, ...);
-
-int (*f)(va_list);
 int (*get_func(const char *specifier))(va_list);
 
 int print_char(va_list args);
