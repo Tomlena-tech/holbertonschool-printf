@@ -6,7 +6,7 @@ int _printf(const char *format, ...)
 	va_list args;
 	int i = 0, count = 0, index_funct = 0;
 	int (*func)(va_list);
-
+	
 	format_func_t funcs[] = {
 		{'c', print_char},
 		{'s', print_str},

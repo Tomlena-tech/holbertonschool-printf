@@ -3,9 +3,9 @@
 #include "_printf.h"
 
 /**
- * main - Entry point
+ * main - pointd'entrée pour tester si ca marche
  *
- * Return: Always 0
+ * Return: pas de retour
  */
 int main(void)
 {
