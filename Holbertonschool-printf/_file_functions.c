@@ -27,7 +27,7 @@ int print_str(va_list args)
 
 	if (str == NULL)
 		str = "(null)";
-	for (char_count = 0; str[char_count]; j++)
+	for (char_count = 0; str[char_count]; char_count++)
 	{
 		_putchar(str[char_count]);
 	}

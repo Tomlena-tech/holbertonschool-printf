@@ -6,11 +6,17 @@
 #include <stdarg.h>
 #include <unistd.h>
 
+typedef struct format_func
+{
+    char specifier;
+    int (*f)(va_list);
+} format_func_t;
+
 int _printf(const char *format, ...);
 int (*get_func(const char *specifier))(va_list);
 
 int print_char(va_list args);
-int print_string(va_list args);
+int print_str(va_list args);
 int print_percent(va_list args);
 int print_int(va_list args);
 int print_number(unsigned int n);

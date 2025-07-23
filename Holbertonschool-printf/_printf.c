@@ -1,48 +1,61 @@
 #include <stdarg.h>
 #include "_printf.h"
-#include "_putchar.c"
-
-/**
- * _printf - Custom printf function
- * @format: The format string
- * @...: The values to format and print
- *
- * Return: The number of characters printed
- */
 
 int _printf(const char *format, ...)
 {
-	va_list args;
-	int i = 0;
-	int char_count = 0;
-	int (*f)(va_list);
+    va_list args;                            
+    int i = 0, count = 0, index_funct = 0;   
+    int (*func)(va_list);                    
 
-	va_start(args, format);
+    format_func_t funcs[] = {
+        {'c', print_char},       
+        {'s', print_str},    
+        {'%', print_percent},   
+        {'d', print_int},        
+        {'i', print_int},        
+        {0, NULL}              
+    };
 
-	if (format == NULL || !format[i + 1])
-		return (-1);
+    va_start(args, format);     
 
+    while (format && format[i])  
+    {
+        if (format[i] != '%')     
+        {
+            count += _putchar(format[i]); 
+            i++;                         
+            continue;                   
+        }
 
-	while (format[i])
-	{
-		if (format[i] == '%' && format[i = 1])
-		{
-			if (format[i + 1] != 'c' && format[i + 1] != 's')
-			{
-			char_count += _putchar(format[i]);
-			char_count += _putchar(format[i + 1]);
-			i++;
-			}
-			else
-				{
-					f = get_func(&format[i + 1]);
-					char_count += f(args);
-					i++;
-				}
-			
+        i++;                       
+        func = NULL;           
+        index_funct = 0;         
+
+        while (funcs[index_funct].specifier)
+        {
+            
+        
+            if (format[i] == funcs[index_funct].specifier)
+            {
+                func = funcs[index_funct].f;
+                break;  
+            }
+            index_funct++;
+        }
+
+        if (func)
+        {
+            count += func(args);  
+        }
+        else
+        {
+            count += _putchar('%');         
+            count += _putchar(format[i]);  
 		}
+        i++;  
+    }
 
-	}
-	va_end(args);
-	return (char_count);
+    va_end(args);   
+
+    return (count);
 }
