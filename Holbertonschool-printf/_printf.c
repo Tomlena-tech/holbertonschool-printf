@@ -1,5 +1,6 @@
 #include <stdarg.h>
 #include "_printf.h"
+#include "_putchar.c"
 
 /**
  * _printf - Custom printf function

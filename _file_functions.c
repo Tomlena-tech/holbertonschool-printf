@@ -35,32 +35,43 @@ int print_str(va_list args)
 }
 int print_percent(va_list args)
 {
-	(void)args;  // Ignore l'argument si il n'est pas utilsé
+	(void)args;
 	_putchar('%');
 	return (1);
 }
 int print_int(va_list args)
 {
-	int num = va_arg(args, int);
+	int n = va_arg(args, int);
 	int count = 0;
-	if (num < 0)
+	unsigned int num;
+
+	if (n < 0)
 	{
-		_putchar('-');
-		num = -num;
-		count++;
+		count += _putchar('-');
+		num = -n;
 	}
-	if (num / 10)
-		count += print_int((va_list)&num / 10);
-	_putchar(num % 10 + '0');
-	return (count + 1);
+	else
+	{
+		num = n;
+	}
+
+	count += print_number(num);
+
+	return (count);
 }
-int print_unsigned(va_list args)
+/**
+ * print_number - Fonction d'affichage récursif des chiffres d'un entier positif
+ * @n: nombre entier positif
+ * Return: nombre de caractères affichés
+ */
+int print_number(unsigned int n)
 {
-	unsigned int num = va_arg(args, unsigned int);
 	int count = 0;
 
-	if (num / 10)
-		count += print_unsigned((va_list)&num / 10);
-	_putchar(num % 10 + '0');
-	return (count + 1);
+	if (n / 10)
+		count += print_number(n / 10);
+
+	count += _putchar((n % 10) + '0');
+
+	return (count);
 }

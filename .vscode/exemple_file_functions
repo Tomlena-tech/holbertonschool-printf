@@ -42,7 +42,7 @@ int print_string(va_list args)
  */
 int print_percent(va_list args)
 {
-	(void)args;           // Argument inutilisé
+	(void)args;
 	return (_putchar('%'));
 }
 
