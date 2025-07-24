@@ -1,19 +1,21 @@
 📋 DESCRIPTION
 
-Ce projet consiste |  recréer la fonction standard C printf, en développant une version personnalisée nommée _printf. Cette fonction peut afficher différents types de données formaa
+- Ce projet consiste a recréer la fonction standard C printf, en développant une version personnalisée nommée _printf. Cette fonction peut afficher différents types de données formaa
 tées dans le terminal, tout comme printf, mais en se concentrant uniquement sur certains spécificateurs de format.
 
 🧠 OBJECTIFS DU PROJECT
-Comprendre et manipuler les fonctions variadiques en C (stdarg.h)
 
-Utiliser des pointeurs vers des fonctions
+- Comprendre et manipuler les fonctions variadiques en C (stdarg.h)
 
-Gérer l'affichage de différents types de données
+- Utiliser des pointeurs vers des fonctions
 
-Approfondir les structures conditionnelles et les boucles
+- Gérer l'affichage de différents types de données
 
-⚙️ FONCTIONALÉS PRISE EN CHARGE 
-La fonction _printf prend en charge les spécificateurs de format suivants :
+- Approfondir les structures conditionnelles et les boucles
+
+⚙️ FONCTIONALITÉS PRISE EN CHARGE 
+
+- La fonction _printf prend en charge les spécificateurs de format suivants :
 
 | Spécificateur | Description                            |
 | ------------- | -------------------------------------- |
@@ -24,6 +26,7 @@ La fonction _printf prend en charge les spécificateurs de format suivants :
 
 
 🧩 STRUCTURE DU PROJET
+
 | Fichier                  | Rôle                                                                                                                 |
 | ------------------------ | -------------------------------------------------------------------------------------------------------------------- |
 | `printf.c`               | Contient la fonction principale `_printf`                                                                            |
@@ -33,7 +36,8 @@ La fonction _printf prend en charge les spécificateurs de format suivants :
 
 
  🔁 FONCTIONNEMENT DE _PRINTF
- Lecture caractère par caractère de la chaîne de format.
+ 
+ - Lecture caractère par caractère de la chaîne de format.
 
  Lorsqu’un % est rencontré :
 
@@ -45,5 +49,12 @@ La fonction _printf prend en charge les spécificateurs de format suivants :
 
  Les arguments sont récupérés via va_list.
 
+ 
+ 🛠️ Compilation
+ 
+ - Compilation du projet avec :
+
+   gcc -Wall -Wextra -Werror -pedantic -std=gnu89 -Wno-format *.c
+   
  👨‍💻 AUTEURS
  Ce projet a été développé conjointement par Thomas Decourt & Dorian Oufer
