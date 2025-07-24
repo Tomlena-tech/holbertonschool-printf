@@ -54,7 +54,7 @@ tées dans le terminal, tout comme printf, mais en se concentrant uniquement sur
  
  - Compilation du projet avec :
 
-   gcc -Wall -Wextra -Werror -pedantic -std=gnu89 -Wno-format *.c
+    - gcc -Wall -Wextra -Werror -pedantic -std=gnu89 -Wno-format *.c
    
  👨‍💻 AUTEURS
- Ce projet a été développé conjointement par Thomas Decourt & Dorian Oufer
+ - Ce projet a été développé conjointement par Thomas Decourt & Dorian Oufer
