@@ -1,0 +1,80 @@
+
+man
+Copier
+Modifier
+.TH _PRINTF 3 "July 2025" "Holberton School" "Library Functions Manual"
+.SH NAME
+_printf \- reproduces the behavior of the standard printf function
+.SH SYNOPSIS
+.B #include "_printf.h"
+.br
+.B int _printf(const char *format, ...);
+.SH DESCRIPTION
+The
+.B _printf
+function produces output according to a
+.B format
+string that specifies how subsequent arguments are converted for output.
+
+The function handles a subset of the standard format specifiers found in the standard C library function
+.BR printf (3).
+.PP
+Supported format specifiers include:
+.TP
+.B %c
+Prints a single character.
+.TP
+.B %s
+Prints a null-terminated string.
+.TP
+.B %%
+Prints the percentage symbol '%'.
+.TP
+.B %d
+Prints a signed decimal integer.
+.TP
+.B %i
+Prints a signed decimal integer (same as %d).
+
+.SH RETURN VALUE
+The
+.B _printf
+function returns the total number of characters printed (excluding the null byte used to end output to strings).
+If the function fails, a negative value is returned.
+
+.SH EXAMPLES
+.B Example 1:
+.br
+.nf
+_printf("Hello %s\\n", "world");
+.fi
+Outputs:
+.nf
+Hello world
+.fi
+
+.B Example 2:
+.br
+.nf
+_printf("Number: %d and char: %c\\n", 42, 'A');
+.fi
+Outputs:
+.nf
+Number: 42 and char: A
+.fi
+
+.SH NOTES
+- The function is a simplified clone of the standard
+.B printf
+and does not support all format specifiers or flags (such as width, precision, etc.).
+- Additional specifiers can be added by extending the function array in
+.B _printf
+and implementing the appropriate print function.
+
+.SH AUTHORS
+Written by Thomas Lena and contributors from Holberton School.
+
+.SH SEE ALSO
+.BR printf(3),
+.BR putchar(3),
+.BR stdarg(3)
