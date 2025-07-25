@@ -33,12 +33,27 @@ int print_str(va_list args)
 	}
 	return (char_count);
 }
+
+/**
+ * print_percent - Imprime les pourcentages
+ * @args: Null.
+ *
+ * Return: 1 car le caractère '%' est imprimé
+ */
+
 int print_percent(va_list args)
 {
 	(void)args;
 	_putchar('%');
 	return (1);
 }
+
+/**
+ * print_int - Imprime un entier
+ * @args: les arguments.
+ *
+ * Return: le nombre de caractères imprimés
+ */
 int print_int(va_list args)
 {
 	int n = va_arg(args, int);
